@@ -14,6 +14,11 @@
 		40B920A52AF9F33000330171 /* FetchRecipeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B920A42AF9F33000330171 /* FetchRecipeTests.swift */; };
 		40B920AF2AF9F33000330171 /* FetchRecipeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B920AE2AF9F33000330171 /* FetchRecipeUITests.swift */; };
 		40B920B12AF9F33000330171 /* FetchRecipeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B920B02AF9F33000330171 /* FetchRecipeUITestsLaunchTests.swift */; };
+		40B920C02AF9F71B00330171 /* DessertsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B920BF2AF9F71B00330171 /* DessertsVM.swift */; };
+		40B921012AFAFBD700330171 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 40B921002AFAFBD700330171 /* Kingfisher */; };
+		40B921032AFBF5AC00330171 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B921022AFBF5AC00330171 /* CardView.swift */; };
+		40B921062AFBF89700330171 /* DessertListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B921052AFBF89700330171 /* DessertListView.swift */; };
+		40B9210A2AFBF9B600330171 /* Dessert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B921092AFBF9B600330171 /* Dessert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +49,10 @@
 		40B920AA2AF9F33000330171 /* FetchRecipeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FetchRecipeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		40B920AE2AF9F33000330171 /* FetchRecipeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchRecipeUITests.swift; sourceTree = "<group>"; };
 		40B920B02AF9F33000330171 /* FetchRecipeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchRecipeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		40B920BF2AF9F71B00330171 /* DessertsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DessertsVM.swift; path = FetchRecipe/ViewModels/DessertsVM.swift; sourceTree = SOURCE_ROOT; };
+		40B921022AFBF5AC00330171 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		40B921052AFBF89700330171 /* DessertListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertListView.swift; sourceTree = "<group>"; };
+		40B921092AFBF9B600330171 /* Dessert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dessert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40B921012AFAFBD700330171 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,8 +104,10 @@
 		40B920922AF9F32F00330171 /* FetchRecipe */ = {
 			isa = PBXGroup;
 			children = (
+				40B921042AFBF86D00330171 /* ViewModels */,
+				40B920BE2AF9F69600330171 /* Models */,
+				40B920BD2AF9F68100330171 /* Views */,
 				40B920932AF9F32F00330171 /* FetchRecipeApp.swift */,
-				40B920952AF9F32F00330171 /* ContentView.swift */,
 				40B920972AF9F33000330171 /* Assets.xcassets */,
 				40B920992AF9F33000330171 /* Preview Content */,
 			);
@@ -127,6 +139,32 @@
 			path = FetchRecipeUITests;
 			sourceTree = "<group>";
 		};
+		40B920BD2AF9F68100330171 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				40B920952AF9F32F00330171 /* ContentView.swift */,
+				40B921022AFBF5AC00330171 /* CardView.swift */,
+				40B921052AFBF89700330171 /* DessertListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		40B920BE2AF9F69600330171 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				40B921092AFBF9B600330171 /* Dessert.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		40B921042AFBF86D00330171 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				40B920BF2AF9F71B00330171 /* DessertsVM.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +181,9 @@
 			dependencies = (
 			);
 			name = FetchRecipe;
+			packageProductDependencies = (
+				40B921002AFAFBD700330171 /* Kingfisher */,
+			);
 			productName = FetchRecipe;
 			productReference = 40B920902AF9F32F00330171 /* FetchRecipe.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +256,9 @@
 				Base,
 			);
 			mainGroup = 40B920872AF9F32F00330171;
+			packageReferences = (
+				40B920FF2AFAFBD700330171 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 40B920912AF9F32F00330171 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -258,6 +302,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				40B920962AF9F32F00330171 /* ContentView.swift in Sources */,
+				40B920C02AF9F71B00330171 /* DessertsVM.swift in Sources */,
+				40B921062AFBF89700330171 /* DessertListView.swift in Sources */,
+				40B921032AFBF5AC00330171 /* CardView.swift in Sources */,
+				40B9210A2AFBF9B600330171 /* Dessert.swift in Sources */,
 				40B920942AF9F32F00330171 /* FetchRecipeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -577,6 +625,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		40B920FF2AFAFBD700330171 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		40B921002AFAFBD700330171 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 40B920FF2AFAFBD700330171 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 40B920882AF9F32F00330171 /* Project object */;
 }

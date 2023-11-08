@@ -14,11 +14,14 @@
 		40B920A52AF9F33000330171 /* FetchRecipeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B920A42AF9F33000330171 /* FetchRecipeTests.swift */; };
 		40B920AF2AF9F33000330171 /* FetchRecipeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B920AE2AF9F33000330171 /* FetchRecipeUITests.swift */; };
 		40B920B12AF9F33000330171 /* FetchRecipeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B920B02AF9F33000330171 /* FetchRecipeUITestsLaunchTests.swift */; };
-		40B920C02AF9F71B00330171 /* DessertsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B920BF2AF9F71B00330171 /* DessertsVM.swift */; };
+		40B920C02AF9F71B00330171 /* DessertVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B920BF2AF9F71B00330171 /* DessertVM.swift */; };
 		40B921012AFAFBD700330171 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 40B921002AFAFBD700330171 /* Kingfisher */; };
 		40B921032AFBF5AC00330171 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B921022AFBF5AC00330171 /* CardView.swift */; };
 		40B921062AFBF89700330171 /* DessertListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B921052AFBF89700330171 /* DessertListView.swift */; };
 		40B9210A2AFBF9B600330171 /* Dessert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B921092AFBF9B600330171 /* Dessert.swift */; };
+		40B9210E2AFC00E600330171 /* DessertDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B9210D2AFC00E600330171 /* DessertDetailsView.swift */; };
+		40B921102AFC0B3300330171 /* DessertDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B9210F2AFC0B3300330171 /* DessertDetail.swift */; };
+		40B921122AFC125300330171 /* DessertDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B921112AFC125300330171 /* DessertDetailsVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,10 +52,13 @@
 		40B920AA2AF9F33000330171 /* FetchRecipeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FetchRecipeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		40B920AE2AF9F33000330171 /* FetchRecipeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchRecipeUITests.swift; sourceTree = "<group>"; };
 		40B920B02AF9F33000330171 /* FetchRecipeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchRecipeUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		40B920BF2AF9F71B00330171 /* DessertsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DessertsVM.swift; path = FetchRecipe/ViewModels/DessertsVM.swift; sourceTree = SOURCE_ROOT; };
+		40B920BF2AF9F71B00330171 /* DessertVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DessertVM.swift; path = FetchRecipe/ViewModels/DessertVM.swift; sourceTree = SOURCE_ROOT; };
 		40B921022AFBF5AC00330171 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		40B921052AFBF89700330171 /* DessertListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertListView.swift; sourceTree = "<group>"; };
 		40B921092AFBF9B600330171 /* Dessert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dessert.swift; sourceTree = "<group>"; };
+		40B9210D2AFC00E600330171 /* DessertDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertDetailsView.swift; sourceTree = "<group>"; };
+		40B9210F2AFC0B3300330171 /* DessertDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertDetail.swift; sourceTree = "<group>"; };
+		40B921112AFC125300330171 /* DessertDetailsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertDetailsVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +151,7 @@
 				40B920952AF9F32F00330171 /* ContentView.swift */,
 				40B921022AFBF5AC00330171 /* CardView.swift */,
 				40B921052AFBF89700330171 /* DessertListView.swift */,
+				40B9210D2AFC00E600330171 /* DessertDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -153,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				40B921092AFBF9B600330171 /* Dessert.swift */,
+				40B9210F2AFC0B3300330171 /* DessertDetail.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -160,7 +168,8 @@
 		40B921042AFBF86D00330171 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				40B920BF2AF9F71B00330171 /* DessertsVM.swift */,
+				40B920BF2AF9F71B00330171 /* DessertVM.swift */,
+				40B921112AFC125300330171 /* DessertDetailsVM.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -302,11 +311,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				40B920962AF9F32F00330171 /* ContentView.swift in Sources */,
-				40B920C02AF9F71B00330171 /* DessertsVM.swift in Sources */,
+				40B920C02AF9F71B00330171 /* DessertVM.swift in Sources */,
 				40B921062AFBF89700330171 /* DessertListView.swift in Sources */,
+				40B921122AFC125300330171 /* DessertDetailsVM.swift in Sources */,
+				40B9210E2AFC00E600330171 /* DessertDetailsView.swift in Sources */,
 				40B921032AFBF5AC00330171 /* CardView.swift in Sources */,
 				40B9210A2AFBF9B600330171 /* Dessert.swift in Sources */,
 				40B920942AF9F32F00330171 /* FetchRecipeApp.swift in Sources */,
+				40B921102AFC0B3300330171 /* DessertDetail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

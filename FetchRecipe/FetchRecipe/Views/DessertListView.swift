@@ -9,14 +9,16 @@
 import SwiftUI
 
 struct DessertListView: View {
-    @StateObject var vm = DessertsVM()
+    @StateObject var vm = DessertVM()
     
     var body: some View {
         NavigationView {
             ScrollView {
                 VStack(spacing: 16) {
                     ForEach(vm.desserts) { dessert in
-                        CardView(image: dessert.strMealThumb, title: dessert.strMeal)
+                        NavigationLink(destination: DessertDetailsView(dessertID: dessert.idMeal)) {
+                            CardView(image: dessert.strMealThumb, title: dessert.strMeal)
+                        }
                     }
                 }
                 .padding()

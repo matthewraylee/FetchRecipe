@@ -1,5 +1,5 @@
 //
-//  DessertsVM.swift
+//  DessertVM.swift
 //  FetchRecipe
 //
 //  Created by Matthew Lee on 11/6/23.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class DessertsVM: ObservableObject {
+class DessertVM: ObservableObject {
     @Published var desserts: [Dessert] = []
     @Published var errMsg: String?
     

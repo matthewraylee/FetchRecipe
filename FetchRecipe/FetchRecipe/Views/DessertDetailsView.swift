@@ -13,30 +13,103 @@ struct DessertDetailsView: View {
     @StateObject private var detailVM = DessertDetailsVM()
     
     var body: some View {
-        VStack {
-            if let detail = detailVM.dessertDetails {
-                Text("Meal: \(detail.strMeal)")
-                ScrollView {
-                    VStack {
-                        KFImage(URL(string: detail.strMealThumb))
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: UIScreen.main.bounds.width, height: 300)
-                            .clipped()
-        
-                        Text(detail.strMeal)
-                            .font(.title)
-                            .padding(.top, 8)
-                            .padding(.horizontal)
-                    }
+        ScrollView {
+            VStack(alignment: .leading, spacing: 10) {
+                if let detail = detailVM.dessertDetails {
+                    ImageSection(imageURL: detail.strMealThumb)
+                    TitleSection(mealName: detail.strMeal, category: detail.strCategory, area: detail.strArea)
+                    InstructionsSection(instructions: detail.strInstructions)
+                    IngredientsSection(ingredients: detail.ingredients, measures: detail.measures)
+                } else {
+                    ProgressView()
                 }
-            } else {
-                // Loading Screen
-                ProgressView()
             }
+            .padding(.horizontal)
         }
         .onAppear {
-            detailVM.loadDessertDetails(dessertID: dessertID)      // Call loadDessertDetails by dessertID
+            detailVM.loadDessertDetails(dessertID: dessertID)
+        }
+        .navigationBarTitleDisplayMode(.inline)
+    }
+    
+    // Image section
+    struct ImageSection: View {
+        var imageURL: String
+        
+        var body: some View {
+            GeometryReader { geometry in
+                KFImage(URL(string: imageURL))
+                    .resizable()
+                    .scaledToFit()
+                    .cornerRadius(25)
+                    .frame(width: geometry.size.width, height: 300)
+                    .clipped()
+            }
+            .padding(.top)
+            .frame(height: 300)
+        }
+    }
+    
+    // Title section
+    struct TitleSection: View {
+        var mealName: String
+        var category: String
+        var area: String
+        
+        var body: some View {
+            VStack(alignment: .leading) {
+                // Title
+                Text(mealName)
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .padding(.top)
+                
+                // Origins
+                Text("\(area) \(category)")
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+            }
+        }
+    }
+    
+    // Instructions Section
+    struct InstructionsSection: View {
+        var instructions: String
+        
+        var body: some View {
+            VStack(alignment: .leading) {
+                Text("Instructions")
+                    .font(.headline)
+                    .padding(.top)
+                    .padding(.bottom, 5)
+                
+                Text(instructions)
+            }
+        }
+    }
+    
+    // Ingredients and Measures Section
+    struct IngredientsSection: View {
+        var ingredients: [String?]
+        var measures: [String?]
+        
+        var body: some View {
+            VStack(alignment: .leading) {
+                Text("Ingredients")
+                    .font(.headline)
+                    .padding(.top)
+                    .padding(.bottom, 5)
+                
+                ForEach(Array(zip(ingredients, measures)), id: \.0) { ingredient, measure in
+                    if let ingredient = ingredient, let measure = measure, !ingredient.isEmpty, !measure.isEmpty {
+                        HStack {
+                            Text("• \(ingredient)")
+                            Spacer()
+                            Text(measure)
+                        }
+                    }
+                }
+            }
         }
     }
 }
